@@ -39,7 +39,7 @@ public class Panel_Weze extends Panel  {//Panel gry "Wê¿e".
 		
 		timer = new Timer();
 		timer.schedule(timerGra, 0, 10);  
-		setLayout(null);// Umozliwia ustawienie wlasnego rozmieszczenia elementow, zamiast domyslnego.
+		setLayout(null);// Umozliwia ustawienie wlasnego rozmieszczenia elementow.
 	}
 			  
 	TimerTask timerGra = new TimerTask() { // W¹tek timera - obs³uga gry.     
@@ -50,7 +50,7 @@ public class Panel_Weze extends Panel  {//Panel gry "Wê¿e".
 					ilosc_graczy_zmiana = true;
 				}
 						
-				if (start == true) {// tylko raz, przywrocenie focusa
+				if (start == true) {// tylko raz, przywrocenie focusa.
 					umozliwFocus(true);
 					start = false;// Flaga trwania rozgrywki.	
 				}
@@ -170,7 +170,7 @@ public class Panel_Weze extends Panel  {//Panel gry "Wê¿e".
 				predkosc = 20;// Wartoœæ domyœlna.
 				elementy.pole_edycji_predkosc.setText("10");
 			}
-			try {// Pobranie licczby punktów potrzebnych do zwyciêstwa.
+			try {// Pobranie liczby punktów potrzebnych do zwyciêstwa.
 				warunek_zwyciestwa = Short.parseShort(elementy.pole_edycji_max_wyn.getText());
 			}
 			catch (NumberFormatException e){
@@ -186,7 +186,7 @@ public class Panel_Weze extends Panel  {//Panel gry "Wê¿e".
 			}		
 		}	
 		
-	protected void paintComponent(Graphics g) {//Rysowanie elementów grafiki i bitmapy
+	protected void paintComponent(Graphics g) {//Rysowanie elementów grafiki i bitmapy.
 		 g.setColor(kolor_planszy);
 		 g.fillRect(0, 0, this.getWidth(),  this.getHeight());
 		 g.setColor(Color.BLACK);

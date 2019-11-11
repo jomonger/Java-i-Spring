@@ -57,7 +57,7 @@ public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 		}
 	}
 	
-	private void nowaPlansza() {// Nowe t³o pola gry i obraz do wyswietlania.
+	private void nowaPlansza() {// Nowe t³o pola gry i obraz do wyswietlania. Obraz t³a jest porównywany z wyœwietlanym w celu wtkrycia kolizji.
 		ziarno_koloru = (short)( generator.nextInt(2000) + 5);
 		ziarno_koloru *= ziarno_koloru;
 		obraz = new BufferedImage(800, 800, BufferedImage.TYPE_INT_RGB);
@@ -109,7 +109,7 @@ public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 					punkt(Gracze[i].getPozycjax(), Gracze[i].getPozycjay(), Gracze[i].getGrubosc(), kat);
 					if(czy_Banda() || obraz.getRGB((short)punkt[0],(short) punkt[1]) != obraz_tla.getRGB((short)punkt[0],(short) punkt[1]) ) {
 						Gracze[i].setKolizja(true);
-						kolizja = true;// kolizja w grze.
+						kolizja = true;// kolizja w grze, jednoczesnosc efektów.
 						break;
 					}
 				}	
@@ -131,7 +131,7 @@ public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 		
 		if(kolizja == true) {// Jeœli wyst¹pi³a kolizja ustaw flage zmiany wyniku i aktualizuj wynik.
 			kolizja = false;
-			setZmiana_wyniku(true);
+			zmiana_wyniku = true;
 			aktualizacja_Wyniku();
 		}
 	

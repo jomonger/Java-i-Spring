@@ -62,8 +62,8 @@ public class GUI_Weze  implements ActionListener{// Komponenty do gry Wê¿e.
 		pole_edycji[0][0] = new TextField("q");
 		pole_edycji[0][1] = new TextField("e");
 		
-		pole_edycji[1][0] = new TextField("4");
-		pole_edycji[1][1] = new TextField("6");
+		pole_edycji[1][0] = new TextField("z");
+		pole_edycji[1][1] = new TextField("c");
 		
 		pole_edycji[2][0] = new TextField("b");
 		pole_edycji[2][1] = new TextField("m");
