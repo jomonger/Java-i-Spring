@@ -7,7 +7,7 @@ public class Gracz_Weze implements KeyListener{// Definicja gracza w grze Wê¿e.
 	private Color kolor;
 	private short ilosc_ptk = 0;
 	private float predkosc, pozycjax, pozycjay, grubosc, kat,poz_x_pop, poz_y_pop;
-	private boolean lewo = false, prawo = false, czy_zyje = true, kolizja = false;
+	private boolean lewo = false, prawo = false, czy_zyje, kolizja = false;
 	protected char lewo_znak , prawo_znak;
 	
 	Gracz_Weze (Color kolor) {

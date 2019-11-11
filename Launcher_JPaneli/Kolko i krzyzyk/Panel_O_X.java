@@ -38,7 +38,7 @@ public class Panel_O_X extends Panel {
 		bok = (int) 625/rozmiar_planszy - odstep;
 	}
 	
-	public void init_Gry(Graphics g) {
+	public void rysuj_Pole_Gry(Graphics g) {// Rysowanie pola gry.
 		if(rozmiar_planszy > 2) {
 			g.setColor(Color.WHITE);
 			for (int x = 0; x < rozmiar_planszy; x++) {
@@ -57,34 +57,31 @@ public class Panel_O_X extends Panel {
 			g.setColor(Color.BLACK); 
 			for (int x = 0; x < rozmiar_planszy; x++) {
 				for (int y = 0; y < rozmiar_planszy; y++) {
-					if (plansza.pola[x][y].stan == 'x') {
+					if (plansza.pola[x][y].stan == 'x') {// krzy¿e
 						g.drawLine(plansza.pola[x][y].poz_x, plansza.pola[x][y].poz_y, plansza.pola[x][y].poz_x + bok, plansza.pola[x][y].poz_y + bok);
 						g.drawLine(plansza.pola[x][y].poz_x, plansza.pola[x][y].poz_y + bok, plansza.pola[x][y].poz_x + bok, plansza.pola[x][y].poz_y);
 					}
-					if (plansza.pola[x][y].stan == 'o') {
+					if (plansza.pola[x][y].stan == 'o') {// ko³a
 						g.drawOval(plansza.pola[x][y].poz_x, plansza.pola[x][y].poz_y, bok, bok);
 					}
 				}
 			}
 		}
-		if(zwyciestwo == true) {
+		if(zwyciestwo == true) {// Reakcja na zwyciêstwo
 			g.setColor(Color.RED);
 	        g.setFont(MAIN.F_ARIAL_20);
-	        g.drawString(("ZWYCIESTWO GRACZA " + ((tura - 1) % 2 + 1)), 10, 200);
-		}
-		g.setColor(Color.BLUE);
-        g.setFont(MAIN.F_ARIAL_20);	
+	        g.drawString(("ZWYCIESTWO GRACZA " + ((tura - 1) % 2 + 1)), 10, 100);
+	        gui.sta_but.setEnabled(true);
+    		gui.res_but.setEnabled(false);
+		}	
 	}
 	
     public void paintComponent(Graphics g) {
     	g.clearRect(0, 0, rozdzielczosc.width, rozdzielczosc.height);
     	g.setColor(Color.LIGHT_GRAY);
     	g.fillRect(0, 0, rozdzielczosc.width, rozdzielczosc.height);  
-    	if(zwyciestwo == true) {
-    		gui.sta_but.setEnabled(true);
-    		gui.res_but.setEnabled(false);
-    	}	 
-    	init_Gry(g);
+
+    	rysuj_Pole_Gry(g);
     	rys_X_O(g);
   }
 }

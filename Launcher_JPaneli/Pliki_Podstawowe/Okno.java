@@ -5,6 +5,7 @@ public class Okno extends JFrame{//Klasa tworzy nowe okno z przekazanym panelem 
 	private static final long serialVersionUID = 1242363695078327910L;
 	
 	protected Okno(Panel panel) {
+				super(panel.getClass().getName());// Nazywa okno tak samo jak wyœwietlany panel.
 				setResizable(true);
 				getContentPane();
 				Container cp = getContentPane();

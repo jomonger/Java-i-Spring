@@ -56,7 +56,6 @@ public class GUI_Weze  implements ActionListener{// Komponenty do gry Wê¿e.
 		// Tu wpisaæ do tablicy komponentów unikatowe komponenty, zostan¹ dodane w Panel_Achtung.
 		KOMPONENTY = new Component[] {res_but, sta_but, lista, pole_edycji_max_wyn, pole_edycji_grubosc, pole_edycji_predkosc};
 		
-		
 		pole_edycji = new TextField[6][2];
 		
 		pole_edycji[0][0] = new TextField("q");
