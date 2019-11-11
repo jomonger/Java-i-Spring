@@ -2,14 +2,13 @@ import java.awt.Button;
 import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Font;
 import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUI_Weze  implements ActionListener{
-	private final static Font f = new Font("serif", Font.PLAIN, 16);
+	
 	private Component[] KOMPONENTY;
 	protected Choice lista;
 	protected Button res_but, sta_but;
@@ -91,7 +90,7 @@ public class GUI_Weze  implements ActionListener{
 			label[i] = new Label("Gracz " + (i + 1));
 			label[i].setBounds(0, 150+25*i, 200, 25);
 			label[i].setForeground(Color.BLACK);
-			label[i].setFont(f);
+			label[i].setFont(MAIN.F_SERIF_16);
 			label[i].setBackground(new Color(50 * ((i+5) % 6) ,45 * ((i+2) %6), 50 * ((i*i+2) % 6)));
 			label[i].setVisible(true); 
 		}
@@ -99,7 +98,7 @@ public class GUI_Weze  implements ActionListener{
 		label[6] = new Label();
 		label[6].setBounds(575, 75, 65, 25);
 		label[6].setBackground(Color.LIGHT_GRAY.darker());
-		label[6].setFont(f);
+		label[6].setFont(MAIN.F_SERIF_16);
 		
 		
 		label[7] = new Label();
@@ -107,27 +106,27 @@ public class GUI_Weze  implements ActionListener{
 		label[7].setBackground(Color.LIGHT_GRAY.darker());
 		
 		label[8] = new Label("                             Lewo Prawo");
-		label[8].setFont(f);
+		label[8].setFont(MAIN.F_SERIF_16);
 		label[8].setBounds(0, 125, 200, 25);
 		label[8].setBackground(Color.LIGHT_GRAY.darker());
 		
 		label[9] = new Label("                 Liczba graczy.");
-		label[9].setFont(f);
+		label[9].setFont(MAIN.F_SERIF_16);
 		label[9].setBounds(0, 100, 200, 25);
 		label[9].setBackground(Color.LIGHT_GRAY.darker());
 		
 		label[10] = new Label("                Pkt. do zwyciêstwa.");
-		label[10].setFont(f);
+		label[10].setFont(MAIN.F_SERIF_16);
 		label[10].setBounds(0, 75, 200, 25);
 		label[10].setBackground(Color.LIGHT_GRAY.darker());
 		
 		label[11] = new Label("                Gruboœæ  (3 - 20).");
-		label[11].setFont(f);
+		label[11].setFont(MAIN.F_SERIF_16);
 		label[11].setBounds(0, 50, 200, 25);
 		label[11].setBackground(Color.LIGHT_GRAY.darker());
 		
 		label[12] = new Label("                Prêdkoœæ (3 - 40).");
-		label[12].setFont(f);
+		label[12].setFont(MAIN.F_SERIF_16);
 		label[12].setBounds(0, 25, 200, 25);
 		label[12].setBackground(Color.LIGHT_GRAY.darker());
 	

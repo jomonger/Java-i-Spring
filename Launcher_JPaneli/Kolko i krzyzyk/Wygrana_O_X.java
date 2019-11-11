@@ -1,5 +1,5 @@
-
 public class Wygrana_O_X {
+	
 	private Panel_O_X panel;
 	private int przylegle, rozmiar, warunek = 3;
 	private char znak;

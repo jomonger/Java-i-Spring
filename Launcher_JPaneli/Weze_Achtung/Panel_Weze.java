@@ -8,6 +8,7 @@ import java.util.TimerTask;
 
 public class Panel_Weze extends Panel  {
 	private static final long serialVersionUID = -1687985848157458244L;
+	
 	private Dimension rozdzielczosc;
 	private BufferedImage obraz;
 	private Color kolor_planszy;

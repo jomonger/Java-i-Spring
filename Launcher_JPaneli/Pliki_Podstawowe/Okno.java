@@ -3,6 +3,7 @@ import javax.swing.JFrame;
 
 public class Okno extends JFrame{
 	private static final long serialVersionUID = 1242363695078327910L;
+	
 	protected Okno(Panel panel) {
 				setResizable(true);
 				getContentPane();

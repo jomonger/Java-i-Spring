@@ -2,8 +2,8 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
-
 public class Gra_Weze {
+	
 	protected final  Gracz_Weze[] Gracze = new Gracz_Weze[6];
 	private BufferedImage obraz, obraz_tla;
 	private Random generator;

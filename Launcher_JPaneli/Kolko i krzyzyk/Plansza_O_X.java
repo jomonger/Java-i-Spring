@@ -1,5 +1,5 @@
-
 public class Plansza_O_X {
+	
 	protected int rozmiar_planszy;
 	protected int ilosc_pol;
 	protected Pole_O_X[][] pola;

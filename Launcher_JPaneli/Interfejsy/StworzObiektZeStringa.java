@@ -1,5 +1,5 @@
-
 public interface StworzObiektZeStringa {
+	
 	static Object New (Class<?> klasa){
 		try {
 			return	klasa.newInstance();

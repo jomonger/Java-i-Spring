@@ -6,7 +6,6 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class Panel_Startowy extends Panel {
 	private static final long serialVersionUID = -5332575308092550047L;
 	private short ilosc_buttonow = 0;
@@ -44,7 +43,7 @@ public class Panel_Startowy extends Panel {
 		g.setColor(Color.BLUE);
 		g.fillRect(0, 0, rozdzielczosc.width, rozdzielczosc.height);
 		g.setColor(Color.GREEN);
-		g.setFont(new Font("Monospaced", Font.BOLD, 15));
+		g.setFont(MAIN.F_MONOSPACED_15);
 		g.drawString("Launcher R K", 10, 20);
 	}
 }

@@ -5,5 +5,6 @@
 	<classpathentry kind="src" path="Saper"/>
 	<classpathentry kind="src" path="Weze_Achtung"/>
 	<classpathentry kind="src" path="Pliki_Podstawowe"/>
+	<classpathentry kind="src" path="Interfejsy"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

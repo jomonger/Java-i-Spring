@@ -3,6 +3,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 public class Mysz_O_X implements MouseListener, MouseMotionListener {
+	
 	private Panel_O_X panel;
 
 	public Mysz_O_X(Panel_O_X panel) {
