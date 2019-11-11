@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class Panel_Startowy extends Panel {
 	private static final long serialVersionUID = -5332575308092550047L;
 	private short ilosc_buttonow = 0;
-	protected Dimension rozdzielczosc = new Dimension(200, 300); 
+	protected Dimension rozdzielczosc = new Dimension(500, 300); 
 	
 	Panel_Startowy() {//Panel uruchamiany jako pierwszy, ekran wyboru gier.
 		setPreferredSize(rozdzielczosc);
@@ -28,7 +28,7 @@ public class Panel_Startowy extends Panel {
 			this.klasa = klasa;
 			ilosc_buttonow++;
 			addActionListener(this);
-			this.setBounds(55, 50 + 40 * ilosc_buttonow, 90, 30);
+			this.setBounds(205, 50 + 40 * ilosc_buttonow, 90, 30);
 		}
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -40,10 +40,11 @@ public class Panel_Startowy extends Panel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		g.clearRect(0, 0, rozdzielczosc.width, rozdzielczosc.height);
-		g.setColor(Color.BLUE);
+		g.setColor(Color.BLUE.darker());
 		g.fillRect(0, 0, rozdzielczosc.width, rozdzielczosc.height);
 		g.setColor(Color.GREEN);
 		g.setFont(MAIN.F_MONOSPACED_15);
 		g.drawString("Launcher R K", 10, 20);
+		g.drawString("Wszystkie okna mo¿na uruchamiaæ wielokrotnie.", 10, 60);
 	}
 }
