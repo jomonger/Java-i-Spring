@@ -10,7 +10,7 @@ public class Panel_Startowy extends Panel {
 	private short ilosc_buttonow = 0;
 	protected Dimension rozdzielczosc = new Dimension(500, 300); 
 	
-	Panel_Startowy() {//Panel uruchamiany jako pierwszy, ekran wyboru gier.
+	Panel_Startowy() {//Panel uruchamiany jako powitalny, ekran wyboru gier.
 		setPreferredSize(rozdzielczosc);
 		setLayout(null);
 		
