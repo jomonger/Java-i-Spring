@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
-public class Gra_Weze {
+public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 	
 	protected final  Gracz_Weze[] Gracze = new Gracz_Weze[6];
 	private BufferedImage obraz, obraz_tla;

@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Gracz_Weze implements KeyListener{
+public class Gracz_Weze implements KeyListener{// Definicja gracza w grze Wê¿e.
 	
 	private Color kolor;
 	private short ilosc_ptk = 0;

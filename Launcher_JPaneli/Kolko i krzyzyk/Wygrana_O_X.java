@@ -1,4 +1,4 @@
-public class Wygrana_O_X {
+public class Wygrana_O_X {// Klasa przeszukuj¹ca pola w poszukiwaniu zwyciêzcy.
 	
 	private Panel_O_X panel;
 	private int przylegle, rozmiar, warunek = 3;

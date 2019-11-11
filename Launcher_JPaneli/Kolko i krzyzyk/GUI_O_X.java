@@ -6,7 +6,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI_O_X implements ActionListener{
+public class GUI_O_X implements ActionListener{// Komponenty interfejsu gry "Kó³ko i krzy¿yk".
 	
 	private Component[] KOMPONENTY;
 	private Panel_O_X panel;
@@ -39,18 +39,18 @@ public class GUI_O_X implements ActionListener{
 		label2 = new Label("Warunek zwyciêstwa (max = bok)");
 		label2.setBounds(80,40,200, 20);
 		label2.setBackground(Color.LIGHT_GRAY);
-		
+		// Tablica zostanie dodana do widoku w panelu.
 		KOMPONENTY = new Component[] {res_but,sta_but, pole_edycji, pole_edycji2, label1, label2};	
 	}
 	
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {// Start i reset gry.
 		Object source = e.getSource();
 		
 		if (source == res_but) {
 			panel.tura = 0;
-			panel.ustaw_Zmienne();
+			panel.ustaw_Stale();
 			panel.rozmiar_planszy = -1;
 			panel.tura = 0;
 			sta_but.setEnabled(true);
@@ -63,12 +63,11 @@ public class GUI_O_X implements ActionListener{
 				if(panel.warunek > panel.pole) panel.warunek = panel.pole;
 			}
 			catch (Exception ex) {
-				//JOptionPane.showMessageDialog(null, "Exception xo");
 			}
 			if (panel.pole >2 && panel.pole<100) {
 				panel.rozmiar_planszy = panel.pole;
 				panel.setBackground(Color.BLACK);
-				panel.ustaw_Zmienne();
+				panel.ustaw_Stale();
 				panel.tura = 0;
 				sta_but.setEnabled(false);
 				res_but.setEnabled(true);

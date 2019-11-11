@@ -35,7 +35,7 @@ public class Mysz_O_X implements MouseListener, MouseMotionListener {
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent e) {
+	public void mouseReleased(MouseEvent e) {// Wywyo³anie wykrywania zwyciêstwa  i ustawienie pola. 
 		int x = e.getX();
 		int y = e.getY();
 		for (int i = 0; i < panel.rozmiar_planszy; i++) {

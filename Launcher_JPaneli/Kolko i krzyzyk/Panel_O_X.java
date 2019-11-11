@@ -1,4 +1,6 @@
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 
 public class Panel_O_X extends Panel {
 	private static final long serialVersionUID = 3718180213956352039L;
@@ -15,10 +17,10 @@ public class Panel_O_X extends Panel {
 	protected int tura = 0;
 	protected boolean zwyciestwo = false;
 	
-	public Panel_O_X() {		
+	public Panel_O_X() {// Panel zawieraj¹cy grê "Kó³ko i Krzy¿yk".
 		setBackground(Color.GRAY);
-		ustaw_Zmienne();
-	    addMouseListener(new Mysz_O_X(this));
+		ustaw_Stale();
+	    addMouseListener(new Mysz_O_X(this));// Dodanie wykrywania kilkniêæ Mysz¹ nad polami gry.
 	    
 		wygr = new Wygrana_O_X();
 		gui = new GUI_O_X(this);
@@ -30,7 +32,7 @@ public class Panel_O_X extends Panel {
 	}
 	
 	
-	public void ustaw_Zmienne() {
+	public void ustaw_Stale() {// Parametry rozmiarów.
 		plansza = new Plansza_O_X(rozmiar_planszy);	
 		odstep = (int) 50/(rozmiar_planszy);
 		bok = (int) 625/rozmiar_planszy - odstep;
@@ -50,7 +52,7 @@ public class Panel_O_X extends Panel {
 		}
 	}
 	
-	public void rys_X_O(Graphics g) {	
+	public void rys_X_O(Graphics g) {// Rysowanie kó³ i krzy¿y.
 		if(rozmiar_planszy > 2) {
 			g.setColor(Color.BLACK); 
 			for (int x = 0; x < rozmiar_planszy; x++) {
@@ -67,11 +69,11 @@ public class Panel_O_X extends Panel {
 		}
 		if(zwyciestwo == true) {
 			g.setColor(Color.RED);
-	        g.setFont(new Font("Monospaced", Font.PLAIN, 12));
+	        g.setFont(MAIN.F_ARIAL_20);
 	        g.drawString(("ZWYCIESTWO GRACZA " + ((tura - 1) % 2 + 1)), 10, 200);
 		}
 		g.setColor(Color.BLUE);
-        g.setFont(new Font("Monospaced", Font.PLAIN, 12));	
+        g.setFont(MAIN.F_ARIAL_20);	
 	}
 	
     public void paintComponent(Graphics g) {

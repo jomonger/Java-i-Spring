@@ -1,7 +1,7 @@
 import java.awt.Dimension;
 import java.util.Random;
 
-public class Panel_Saper extends Panel {
+public class Panel_Saper extends Panel {// Panel gry Saper.
 	private static final long serialVersionUID = 1386942754361888367L;
 	
 	private GUI_Saper gui;
@@ -12,7 +12,7 @@ public class Panel_Saper extends Panel {
 	protected int szerokosc, wysokosc, miny, licznik_zwyciestwa = 0, licznik_flag = 0;
 	protected boolean czy_pierwszy;
 
-	Panel_Saper() { 
+	Panel_Saper() { //Konstruktor uruchamiany tylko przy uruchomieniu z panelu g³ownego.
 		this.szerokosc = 86;
 		this.wysokosc = 48;
 		this.miny = 200;
@@ -27,25 +27,22 @@ public class Panel_Saper extends Panel {
 		setPreferredSize(new Dimension (400,300));
 	}
 	
-	Panel_Saper(int szerokosc, int wysokosc, int miny) {
+	Panel_Saper(int szerokosc, int wysokosc, int miny) {// Konstrukor uruchamiany z wewn¹trz gry, nowa gra to restart okna.
 		this.szerokosc = szerokosc;
 		this.wysokosc = wysokosc;
 		this.miny = miny;
 
 		generator = new Random();
-		gui = new GUI_Saper(this);
+		gui = new GUI_Saper(this);// Dodanie elementów interfejsu.
 		for(short i = 0; i < gui.getElementy().length; i++) add(gui.getElementy()[i]);
-		setLayout(null);	
-		init();
-	}
-	
-	public void init() {
+		setLayout(null);// Umo¿liwienie rêcznego dostosowania pozycji.
+
 		czy_pierwszy = true;
-		pola = new Buttony_Saper[szerokosc][wysokosc]; 
+		pola = new Buttony_Saper[szerokosc][wysokosc]; // Tworzenie tablicy pól gry o zadanych wymiarach.
 		for(int i = 0; i < szerokosc; i++) {
 			for(int j = 0; j < wysokosc; j++) {
 				pola[i][j] = new Buttony_Saper(this);
-				pola[i][j].setBounds(100 + odstep + i * bok, odstep + j * bok + bok, bok, bok);
+				pola[i][j].setBounds(100 + odstep + i * bok, odstep + j * bok + bok, bok, bok);// Ustawienie pozycji przycisków gry.
 				pola[i][j].x = i;
 				pola[i][j].y = j;
 				add(pola[i][j]);				
@@ -54,18 +51,16 @@ public class Panel_Saper extends Panel {
 		rozdzielczosc = new Dimension((2 * odstep) + 5 + (bok * szerokosc) + 100, (4 * odstep) + (bok * wysokosc) + 15);		
 		if(rozdzielczosc.height < 300) rozdzielczosc.height = 300;
 		if(rozdzielczosc.width < 400) rozdzielczosc.width = 400;
-		
 		setPreferredSize(rozdzielczosc);	
-		repaint();
 	}
 	
-	public void stworz_Miny(int x, int y) {
-		boolean k;
+	public void stworz_Miny(int x, int y) {// Metoda tworz¹ca miny + liczby przyleg³ych min, 
+		boolean k;						  //  wywo³ana dopiero przy pierwszym odkryciu (naciœniêciu) pola.
 		int minax, minay;
-		pola[x][y].czy_mina = true;
+		pola[x][y].czy_mina = true;// Tymczasowe ustawienie miny, aby mina nie wylosowa³a siê w miejscu pierwszego odkrycia.
 		for(int i = 0 ; i < miny ; i++) {
 			k = true; 
-			while(k) {	
+			while(k) {// Pêtla losuj¹ca po³o¿enie miny, a¿ natrafi na pust¹ pozycjê oraz dodaj¹ca liczbe przyleg³ych min.
 				minax = generator.nextInt(szerokosc);
 				minay = generator.nextInt(wysokosc);
 				if(pola[minax][minay].czy_mina == false) {
@@ -91,13 +86,13 @@ public class Panel_Saper extends Panel {
 				} 
 			}		
 		}
-		pola[x][y].czy_mina = false;
+		pola[x][y].czy_mina = false;// Usuniêcie miny, aby miny nie by³o w miejscu pierwszego odkrycia.
 	}
 
-	public void odkryj(Buttony_Saper pole) {
+	public void odkryj(Buttony_Saper pole) {// Metoda rekurencyjnie odkrywaj¹ca naciœniête pole i przyleg³e pola, które nie s¹siaduj¹ z min¹.
 		pole.sprawdzone = true;
 		if(pole.czy_odkryty == false) {
-			if(pole.czy_mina) {
+			if(pole.czy_mina) {// Jeœli gracz odrkyje mine, przegrana.
 				 for(int i = 0; i < szerokosc; i++) {
 					 for(int j = 0; j < wysokosc; j++) {
 						 pola[i][j].setEnabled(false);
@@ -106,7 +101,7 @@ public class Panel_Saper extends Panel {
 				setVisible(true);
 				pole.setText("!!!");
 			} else {
-				if(pole.stan == 0) {
+				if(pole.stan == 0) {// Rekurencyjne odkrycie pól.
 					pole.setText("");
 					pole.czy_odkryty = true;
 					pole.setEnabled(false);

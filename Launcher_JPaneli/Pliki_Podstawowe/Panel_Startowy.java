@@ -11,7 +11,7 @@ public class Panel_Startowy extends Panel {
 	private short ilosc_buttonow = 0;
 	protected Dimension rozdzielczosc = new Dimension(200, 300); 
 	
-	Panel_Startowy() {
+	Panel_Startowy() {//Panel uruchamiany jako pierwszy, ekran wyboru gier.
 		setPreferredSize(rozdzielczosc);
 		setLayout(null);
 		
@@ -20,8 +20,9 @@ public class Panel_Startowy extends Panel {
 		add(new But_Launcher(Panel_Saper.class, "Saper"));
 		add(new But_Launcher(Panel_Weze.class, "Wê¿e"));	
 	}
-	private class But_Launcher extends Button implements ActionListener {
+	private class But_Launcher extends Button implements ActionListener {//Buttony uruchamiaj¹ce poszczególne gry/panele.
 		private static final long serialVersionUID = -3271723786741007452L;	
+		
 		Class<?> klasa;
 		But_Launcher(Class<?> klasa, String text) {
 			super(text);
@@ -32,7 +33,7 @@ public class Panel_Startowy extends Panel {
 		}
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			new Okno((Panel)StworzObiektZeStringa.New(klasa));	
+			new Okno((Panel)StworzObiektZeStringa.New(klasa));//Tworzenie nowego obiektu po nazwie klasy; refleksja.
 		} 
 	}
 	@Override //Z klasy Panel.

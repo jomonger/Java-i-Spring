@@ -1,4 +1,4 @@
-public class Plansza_O_X {
+public class Plansza_O_X { // Opis planszy z wewnêtrzn¹ klas¹ pole. 
 	
 	protected int rozmiar_planszy;
 	protected int ilosc_pol;

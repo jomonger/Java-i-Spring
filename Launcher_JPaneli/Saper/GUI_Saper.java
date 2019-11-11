@@ -5,7 +5,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI_Saper implements ActionListener{
+public class GUI_Saper implements ActionListener{// Elementy interfejsu gry Saper.
 	
 	private Component[] KOMPONENTY;
 	private Panel_Saper panel;
@@ -51,12 +51,12 @@ public class GUI_Saper implements ActionListener{
 		
 		label1 = new Label("Sterowanie: LPM (odkryj) i PPM (ustaw/zmieñ flagê). Max szer. = 86");
 		label1.setBounds(10, 20, 400, 20);
-		
+		// Tablica komponentów zostania dodana w panelu.
 		KOMPONENTY = new Component[] {pole_miny, pole_szer, pole_wys, start_button, odkryj_button, poddaj_button,
 									  lab_szer, lab_wys, lab_miny, label, label1 };	
 	}
 	
-	public void pobierzDane (){
+	public void pobierzDane (){// Pobranie Danych i maksymalne wartoœci.
 		try {
 			panel.szerokosc = Integer.parseInt(pole_szer.getText());
 			panel.wysokosc = Integer.parseInt(pole_wys.getText());
@@ -79,13 +79,13 @@ public class GUI_Saper implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();
-		if (source == start_button) {
+		if (source == start_button) {// Otworzenie okna z zadanymi wartoœciami i zamkniêcie aktualnego okna.
 			pobierzDane();
 			new Okno(new Panel_Saper(panel.szerokosc, panel.wysokosc, panel.miny));
 			panel.zamknijOkno();
 		}
 		
-		if (source == odkryj_button) {
+		if (source == odkryj_button) {// Odkrycie stanu pól.
 			panel.setVisible(false); 
 			for(int i = 0; i < panel.szerokosc; i++) {
 				for(int j = 0; j < panel.wysokosc; j++) {	
@@ -97,7 +97,7 @@ public class GUI_Saper implements ActionListener{
 			panel.setVisible(true);
 		}	
 		
-		if (source == poddaj_button) {
+		if (source == poddaj_button) {// Poddanie gry.
 			panel.setVisible(false);
 			for(int i = 0; i < panel.szerokosc; i++) {
 				for(int j = 0; j < panel.wysokosc; j++) {	

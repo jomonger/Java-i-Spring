@@ -6,7 +6,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class Panel_Weze extends Panel  {
+public class Panel_Weze extends Panel  {//Panel gry "Wê¿e".
 	private static final long serialVersionUID = -1687985848157458244L;
 	
 	private Dimension rozdzielczosc;
