@@ -1,6 +1,6 @@
 import java.awt.Color;
 
-public interface MikserKolorow {
+public final class MikserKolorow {
 	//Miksowanie 2 kolorów bitowo z zadan¹ proporcj¹.
 	public static Color miks( Color c1, Color c2, float ratio ) {
 	    if ( ratio > 1f ) ratio = 1f;

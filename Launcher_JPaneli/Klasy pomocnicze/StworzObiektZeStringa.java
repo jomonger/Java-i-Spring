@@ -1,4 +1,4 @@
-public interface StworzObiektZeStringa {
+public final class StworzObiektZeStringa {
 	
 	static Object New (Class<?> klasa){//Ta funkcja wywo³uje konstrukcje obiektu o typie przekazanym w parametrze.
 		try {
