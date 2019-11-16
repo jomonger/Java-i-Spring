@@ -1,7 +1,7 @@
 import java.awt.Dimension;
 import java.util.Random;
 
-public final class Panel_Saper extends Panel {// Panel gry Saper.
+public final class Panel_Saper extends Panel {// Panel gry Saper. 
 	private static final long serialVersionUID = 1386942754361888367L;
 	
 	private GUI_Saper gui;
@@ -35,14 +35,14 @@ public final class Panel_Saper extends Panel {// Panel gry Saper.
 		generator = new Random();
 		gui = new GUI_Saper(this);// Dodanie elementów interfejsu.
 		for(short i = 0; i < gui.getElementy().length; i++) add(gui.getElementy()[i]);
-		setLayout(null);// Umo¿liwienie rêcznego dostosowania pozycji.
+		setLayout(null);
 
 		czy_pierwszy = true;
 		pola = new Buttony_Saper[szerokosc][wysokosc]; // Tworzenie tablicy pól gry o zadanych wymiarach.
 		for(int i = 0; i < szerokosc; i++) {
 			for(int j = 0; j < wysokosc; j++) {
 				pola[i][j] = new Buttony_Saper(this);
-				pola[i][j].setBounds(100 + odstep + i * bok, odstep + j * bok + bok, bok, bok);// Ustawienie pozycji przycisków gry.
+				pola[i][j].setBounds(100 + odstep + i * bok, odstep + j * bok + bok, bok, bok);// Ustawienie pozycji pól gry.
 				pola[i][j].x = i;
 				pola[i][j].y = j;
 				add(pola[i][j]);				
@@ -55,12 +55,10 @@ public final class Panel_Saper extends Panel {// Panel gry Saper.
 	}
 	
 	public void stworz_Miny(int x, int y) {// Metoda tworz¹ca miny + liczby przyleg³ych min, 
-		boolean k;						  //  wywo³ana dopiero przy pierwszym odkryciu (naciœniêciu) pola.
-		int minax, minay;
-		pola[x][y].czy_mina = true;// Tymczasowe ustawienie miny, aby mina nie wylosowa³a siê w miejscu pierwszego odkrycia.
+		int minax, minay;			      //  wywo³ana dopiero przy pierwszym odkryciu (naciœniêciu) pola.
 		for(int i = 0 ; i < miny ; i++) {
-			k = true; 
-			while(k) {// Pêtla losuj¹ca po³o¿enie miny, a¿ natrafi na pust¹ pozycjê oraz dodaj¹ca liczbe przyleg³ych min.
+			pola[x][y].czy_mina = true;// Tymczasowe ustawienie miny, aby mina nie wylosowa³a siê w miejscu pierwszego odkrycia.
+			while(pola[x][y].czy_mina) {// Pêtla losuj¹ca po³o¿enie miny, a¿ natrafi na pust¹ pozycjê oraz dodaj¹ca liczbe przyleg³ych min.
 				minax = generator.nextInt(szerokosc);
 				minay = generator.nextInt(wysokosc);
 				if(pola[minax][minay].czy_mina == false) {
@@ -82,11 +80,11 @@ public final class Panel_Saper extends Panel {// Panel gry Saper.
 						pola[minax + 1][minay].stan++; 
 					if(minax - 1 >= 0		) 
 						pola[minax - 1][minay].stan++;
-					k = false;
+					pola[x][y].czy_mina = false;// Usuniêcie miny, aby miny nie by³o w miejscu pierwszego odkrycia.
 				} 
 			}		
 		}
-		pola[x][y].czy_mina = false;// Usuniêcie miny, aby miny nie by³o w miejscu pierwszego odkrycia.
+		
 	}
 
 	public void odkryj(Buttony_Saper pole) {// Metoda rekurencyjnie odkrywaj¹ca naciœniête pole i przyleg³e pola, które nie s¹siaduj¹ z min¹.

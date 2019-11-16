@@ -8,7 +8,7 @@ public abstract class Panel extends JPanel {//Klasa abstrakcyjna uogólniaj¹ca pa
 	private static final long serialVersionUID = 813471686919109241L;
 	
 	protected int getClose() {return JFrame.DISPOSE_ON_CLOSE;} 
-	public void zamknijOkno() {
+	protected void zamknijOkno() {
 		Window win = SwingUtilities.getWindowAncestor((JComponent) this);
 		win.dispose();
 	}

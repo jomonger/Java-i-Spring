@@ -4,7 +4,7 @@ import java.util.Random;
 
 public final class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 	
-	protected final  Gracz_Weze[] Gracze = new Gracz_Weze[6];
+	protected final Gracz_Weze[] Gracze = new Gracz_Weze[6];
 	private BufferedImage obraz, obraz_tla;
 	private Random generator;
 	private boolean kolizja = false, _wygrany = false, zmiana_wyniku = false;

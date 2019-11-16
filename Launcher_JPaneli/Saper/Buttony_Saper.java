@@ -13,7 +13,7 @@ public final class Buttony_Saper extends JButton {// Klasa zawieraj¹ca dzia³ania
 	protected int stan, x, y;
 	protected Panel_Saper panel;
 	
-	public Buttony_Saper(Panel_Saper panel) {
+	protected Buttony_Saper(Panel_Saper panel) {
 		this.setFont(MAIN.F_ARIAL_20);
 		this.setMargin(new Insets(0,0,0,0));// Usuniêcie marginesu aby zmieœci³ siê ca³y znak.
 		this.setText("");	

@@ -21,7 +21,7 @@ public final class GUI_Weze  implements ActionListener{// Komponenty do gry Wê¿e
 		lista.setBounds(5, 100, 50, 50);
 		lista.setVisible(true); 
 		for(byte i = 0; i < 5; i++) {
-			lista.add(String.valueOf(i+2));//wybor graczy 2 - 6
+			lista.add(String.valueOf(i+2));//wybor graczy 2 - 6 
 		}
 		lista.setFocusable(false);
 		lista.select(2);

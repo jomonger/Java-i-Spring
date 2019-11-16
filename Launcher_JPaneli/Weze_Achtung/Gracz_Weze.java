@@ -10,7 +10,7 @@ public final class Gracz_Weze implements KeyListener{// Definicja gracza w grze 
 	private boolean lewo = false, prawo = false, czy_zyje, kolizja = false;
 	protected char lewo_znak , prawo_znak;
 	
-	Gracz_Weze (Color kolor) {
+	protected Gracz_Weze (Color kolor) {
 		this.kolor = kolor;
 	}
 	

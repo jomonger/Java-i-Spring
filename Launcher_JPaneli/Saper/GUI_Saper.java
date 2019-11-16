@@ -19,7 +19,7 @@ public final class GUI_Saper implements ActionListener{// Elementy interfejsu gr
 	 	pole_szer = new TextField(Integer.toString(panel.szerokosc)); 
 		pole_szer.setBounds(10, 40, 30, 20);
 		
-		pole_wys = new TextField(Integer.toString(panel.wysokosc));
+		pole_wys = new TextField(Integer.toString(panel.wysokosc)); 
 		pole_wys.setBounds(10, 70, 30, 20);
 		
 		pole_miny = new TextField(Integer.toString(panel.miny));
