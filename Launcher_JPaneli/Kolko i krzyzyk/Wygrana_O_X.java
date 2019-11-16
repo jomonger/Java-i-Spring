@@ -1,4 +1,4 @@
-public class Wygrana_O_X {// Klasa przeszukuj¹ca pola w poszukiwaniu zwyciêzcy.
+public final class Wygrana_O_X {// Klasa przeszukuj¹ca pola w poszukiwaniu zwyciêzcy.
 	
 	private Plansza_O_X plansza;
 	private int przylegle, rozmiar, warunek = 3;

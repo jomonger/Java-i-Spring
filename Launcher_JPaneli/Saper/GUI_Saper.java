@@ -5,7 +5,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI_Saper implements ActionListener{// Elementy interfejsu gry Saper.
+public final class GUI_Saper implements ActionListener{// Elementy interfejsu gry Saper.
 	
 	private Component[] KOMPONENTY;
 	private Panel_Saper panel;
@@ -13,7 +13,7 @@ public class GUI_Saper implements ActionListener{// Elementy interfejsu gry Sape
 	private Label lab_szer, lab_wys, lab_miny, label, label1;
 	protected Button start_button, odkryj_button,  poddaj_button;
 	
-	GUI_Saper(Panel_Saper panel){
+	GUI_Saper(Panel_Saper panel){ 
 		this.panel = panel;
 		 
 	 	pole_szer = new TextField(Integer.toString(panel.szerokosc)); 

@@ -5,7 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-class Buttony_Saper extends JButton {// Klasa zawieraj¹ca dzia³ania pola gry "Saper".
+public final class Buttony_Saper extends JButton {// Klasa zawieraj¹ca dzia³ania pola gry "Saper".
 	private static final long serialVersionUID = 7469882051996330098L;
 	
 	private int flaga;
@@ -19,7 +19,7 @@ class Buttony_Saper extends JButton {// Klasa zawieraj¹ca dzia³ania pola gry "Sa
 		this.setText("");	
 		flaga = 0;
 		stan = 0;
-		this.panel = panel;
+		this.panel = panel; 
 
 		this.addMouseListener(new MouseAdapter() {
 			public void mouseReleased(MouseEvent e) {

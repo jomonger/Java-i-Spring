@@ -6,7 +6,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI_O_X implements ActionListener{// Komponenty interfejsu gry "Kó³ko i krzy¿yk".
+public final class GUI_O_X implements ActionListener{// Komponenty interfejsu gry "Kó³ko i krzy¿yk".
 	
 	private Component[] KOMPONENTY;
 	private Panel_O_X panel;

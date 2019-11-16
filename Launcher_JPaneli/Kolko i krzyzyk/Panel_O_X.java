@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
-public class Panel_O_X extends Panel {
+public final class Panel_O_X extends Panel {
 	private static final long serialVersionUID = 3718180213956352039L;
 	
 	private final int pocz_rys_x = 150;
@@ -12,10 +12,7 @@ public class Panel_O_X extends Panel {
 	protected Wygrana_O_X wygr;
 	protected Plansza_O_X plansza;
 	private Dimension	rozdzielczosc;
-	protected int bok, odstep;
-	protected int  pole, rozmiar_planszy = -1;
-	
-	
+	protected int bok, odstep, pole, rozmiar_planszy = -1;  
 	
 	public Panel_O_X() {// Panel zawieraj¹cy grê "Kó³ko i Krzy¿yk".
 		setBackground(Color.GRAY);
@@ -30,7 +27,6 @@ public class Panel_O_X extends Panel {
 		setPreferredSize(rozdzielczosc);	
 		setLayout(null);
 	}
-	
 	
 	public void ustaw_Stale() {// Parametry rozmiarów.
 		plansza = new Plansza_O_X(rozmiar_planszy);	

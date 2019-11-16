@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
-public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
+public final class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 	
 	protected final  Gracz_Weze[] Gracze = new Gracz_Weze[6];
 	private BufferedImage obraz, obraz_tla;
@@ -11,14 +11,14 @@ public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 	private short ilosc_graczy = 6, ilosc_przegranych, ziarno_koloru;	
 	private double[] punkt = new double[2];
 	
-	public Gra_Weze() {// Konstruktor, nadanie kolorów graczom.
+	protected Gra_Weze() {// Konstruktor, nadanie kolorów graczom.
 		generator = new Random();
 		for (short i = 0; i < 6; i++) {
 			Gracze[i] = new Gracz_Weze(new Color(40 * ((i+5) % 6) ,45 * ((i+2) %6), 50 * ((i*i+2) % 6)));
 		}
 	} 
 	
-	public BufferedImage nowaGRA(int ilosc_graczy, int predkosc, int grubosc) {// Nowa partia.
+	protected BufferedImage nowaGRA(int ilosc_graczy, int predkosc, int grubosc) {// Nowa partia.
 		this.ilosc_graczy =(short) ilosc_graczy;
 				
 		for (int i = 0; i < 6; i++) {
@@ -30,13 +30,13 @@ public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 		return obraz;
 	}
 	
-	public void nowaRunda() {//Nowa runda
+	protected void nowaRunda() {//Nowa runda
 		ilosc_przegranych = 0;
 		nowePolozenie();
 		nowaPlansza();
 	}
 	
-	private void nowePolozenie () {//Nowe po³o¿enia startowe graczy oraz Gracze[i].setCzy_zyje(true);.
+	protected void nowePolozenie () {//Nowe po³o¿enia startowe graczy oraz Gracze[i].setCzy_zyje(true);.
 		byte j;
 		short odleglosc;
 		for(byte i = 0; i < ilosc_graczy; i++) {
@@ -97,7 +97,7 @@ public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 		if(ilosc_graczy - ilosc_przegranych <= 1) _wygrany = true;// Jeœli zosta³ jeden gracz to jest wygranym.
 	}
 	
-	public BufferedImage graStart() { // Metoda wykonuj¹ca zmiany na bitmapie i wykrywanie kolizji, zwraca obraz do rysowania.
+	protected BufferedImage graStart() { // Metoda wykonuj¹ca zmiany na bitmapie i wykrywanie kolizji, zwraca obraz do rysowania.
 		for (byte i = 0; i < ilosc_graczy; i++) {
 			Gracze[i].nowaPozycja();
 		}
@@ -138,19 +138,19 @@ public class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 		return obraz;
 	}
 	
-	public boolean is_wygrany() {
+	protected boolean is_wygrany() {
 		return _wygrany;
 	}
 	
-	public void set_wygrany(boolean b) {
+	protected void set_wygrany(boolean b) {
 		this._wygrany = b;
 	}
 
-	public boolean isZmiana_wyniku() {
+	protected boolean isZmiana_wyniku() {
 		return zmiana_wyniku;
 	}
 
-	public void setZmiana_wyniku(boolean b) {
+	protected void setZmiana_wyniku(boolean b) {
 		this.zmiana_wyniku = b;
 	}
 }

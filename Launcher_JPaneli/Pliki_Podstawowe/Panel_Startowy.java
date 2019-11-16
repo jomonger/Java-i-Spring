@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-public class Panel_Startowy extends Panel {
+public final class Panel_Startowy extends Panel {
 	private static final long serialVersionUID = -5332575308092550047L;
 	private short ilosc_buttonow = 0;
 	protected Dimension rozdzielczosc = new Dimension(500, 300); 
@@ -24,7 +24,7 @@ public class Panel_Startowy extends Panel {
 	private class But_Launcher extends Button implements ActionListener {//Buttony uruchamiaj¹ce poszczególne gry/panele.
 		private static final long serialVersionUID = -3271723786741007452L;	
 		
-		Class<?> klasa;
+		private Class<?> klasa;
 		But_Launcher(Class<?> klasa, String text) {
 			super(text);
 			this.klasa = klasa;

@@ -1,6 +1,6 @@
 import java.awt.Font;
 
-public class MAIN {
+public final class MAIN {
 	//Czcionki
 	public final static Font F_SERIF_16 = new Font("serif", Font.PLAIN, 16);
 	public final static Font F_MONOSPACED_15 = new Font("Monospaced", Font.BOLD, 15);

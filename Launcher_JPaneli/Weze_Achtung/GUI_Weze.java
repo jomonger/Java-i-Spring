@@ -7,7 +7,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI_Weze  implements ActionListener{// Komponenty do gry Wê¿e.
+public final class GUI_Weze  implements ActionListener{// Komponenty do gry Wê¿e.
 	
 	private Component[] KOMPONENTY;
 	protected Choice lista;
@@ -15,11 +15,11 @@ public class GUI_Weze  implements ActionListener{// Komponenty do gry Wê¿e.
 	protected TextField pole_edycji[][], pole_edycji_max_wyn, pole_edycji_grubosc ,pole_edycji_predkosc;
 	protected Label label[];
 	
-	public GUI_Weze() {// Elementy graficzne.
+	protected GUI_Weze() {// Elementy graficzne.
 		//Lista wyboru liczby graczy.
 		lista = new Choice();
 		lista.setBounds(5, 100, 50, 50);
-		lista.setVisible(true);
+		lista.setVisible(true); 
 		for(byte i = 0; i < 5; i++) {
 			lista.add(String.valueOf(i+2));//wybor graczy 2 - 6
 		}

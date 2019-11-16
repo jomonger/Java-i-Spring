@@ -1,7 +1,7 @@
 import java.awt.Dimension;
 import java.util.Random;
 
-public class Panel_Saper extends Panel {// Panel gry Saper.
+public final class Panel_Saper extends Panel {// Panel gry Saper.
 	private static final long serialVersionUID = 1386942754361888367L;
 	
 	private GUI_Saper gui;

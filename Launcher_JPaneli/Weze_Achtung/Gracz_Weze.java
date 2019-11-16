@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Gracz_Weze implements KeyListener{// Definicja gracza w grze Wê¿e.
+public final class Gracz_Weze implements KeyListener{// Definicja gracza w grze Wê¿e.
 	
 	private Color kolor;
 	private short ilosc_ptk = 0;
@@ -14,7 +14,7 @@ public class Gracz_Weze implements KeyListener{// Definicja gracza w grze Wê¿e.
 		this.kolor = kolor;
 	}
 	
-	public void nowaPozycja() { // Obliczenie nowego po³o¿enia œrodka g³owy wê¿a.
+	protected void nowaPozycja() { // Obliczenie nowego po³o¿enia œrodka g³owy wê¿a.
 		
 		//obliczanie nowego k¹ta
 		if(this.lewo == true && this.prawo == true)/*pass*/ {
@@ -29,47 +29,47 @@ public class Gracz_Weze implements KeyListener{// Definicja gracza w grze Wê¿e.
 		setPozycjay((float) (getPoz_y_pop() + this.predkosc * Math.cos(this.kat * Math.PI/180)));		     
 	}
 
-	public void setPredkosc(float predkosc) {
+	protected void setPredkosc(float predkosc) {
 		this.predkosc = predkosc;
 	}
 		
-	public void setLewo(boolean lewo) {
+	protected void setLewo(boolean lewo) {
 		this.lewo = lewo; 
 	}
 	
-	public void setPrawo(boolean prawo) {
+	protected void setPrawo(boolean prawo) {
 		this.prawo = prawo;
 	}
 
-	public void setKat(float kat) {
+	protected void setKat(float kat) {
 		this.kat = kat;
 	}
 	
-	public void setGrubosc(float grubosc) {
+	protected void setGrubosc(float grubosc) {
 		this.grubosc = grubosc;
 	}
 	
-	public void setIlosc_ptk(short ilosc_ptk) {
+	protected void setIlosc_ptk(short ilosc_ptk) {
 		this.ilosc_ptk = ilosc_ptk;
 	}
 	
-	public boolean czyZyje() {
+	protected boolean czyZyje() {
 		return czy_zyje;
 	}
 
-	public void setCzy_zyje(boolean czy_zyje) {
+	protected void setCzy_zyje(boolean czy_zyje) {
 		this.czy_zyje = czy_zyje;
 	}
 
-	public float getKat(){
+	protected float getKat(){
 		return kat;
 	}
 	
-	public float getGrubosc() {
+	protected float getGrubosc() {
 		return grubosc;
 	}
 	
-	public short getIlosc_ptk() {
+	protected short getIlosc_ptk() {
 		return ilosc_ptk;
 	}
 
@@ -98,47 +98,47 @@ public class Gracz_Weze implements KeyListener{// Definicja gracza w grze Wê¿e.
 		}
 	}
 
-	public float getPoz_y_pop() {
+	protected float getPoz_y_pop() {
 		return poz_y_pop;
 	}
 
-	public void setPoz_y_pop(float poz_y_pop) {
+	protected void setPoz_y_pop(float poz_y_pop) {
 		this.poz_y_pop = poz_y_pop;
 	}
 
-	public float getPoz_x_pop() {
+	protected float getPoz_x_pop() {
 		return poz_x_pop;
 	}
 
-	public void setPoz_x_pop(float poz_x_pop) {
+	protected void setPoz_x_pop(float poz_x_pop) {
 		this.poz_x_pop = poz_x_pop;
 	}
 
-	public Color getKolor() {
+	protected Color getKolor() {
 		return kolor;
 	}
 
-	public float getPozycjax() {
+	protected float getPozycjax() {
 		return pozycjax;
 	}
 
-	public void setPozycjax(float pozycjax) {
+	protected void setPozycjax(float pozycjax) {
 		this.pozycjax = pozycjax;
 	}
 
-	public float getPozycjay() {
+	protected float getPozycjay() {
 		return pozycjay;
 	}
 
-	public void setPozycjay(float pozycjay) {
+	protected void setPozycjay(float pozycjay) {
 		this.pozycjay = pozycjay;
 	}
 
-	public boolean getKolizja() {
+	protected boolean getKolizja() {
 		return kolizja ;
 	}
 
-	public void setKolizja(boolean b) {
+	protected void setKolizja(boolean b) {
 		this.kolizja = b;
 	}
 

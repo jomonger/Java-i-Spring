@@ -1,7 +1,7 @@
 import java.awt.Container;
 import javax.swing.JFrame;
 
-public class Okno extends JFrame{//Klasa tworzy nowe okno z przekazanym panelem gry.
+public final class Okno extends JFrame{//Klasa tworzy nowe okno z przekazanym panelem gry.
 	private static final long serialVersionUID = 1242363695078327910L;
 	
 	protected Okno(Panel panel) {
