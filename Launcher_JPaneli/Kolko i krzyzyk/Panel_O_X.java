@@ -42,7 +42,7 @@ public class Panel_O_X extends Panel {
 		if(rozmiar_planszy > 2) {
 			g.setColor(Color.WHITE);
 			for (int x = 0; x < rozmiar_planszy; x++) {
-				for (int y = 0; y < rozmiar_planszy; y++) {
+				for (int y = 0; y < rozmiar_planszy; y++) { 
 					plansza.pola[x][y].poz_x = (int) pocz_rys_x + 20 + x*(bok+odstep);
 					plansza.pola[x][y].poz_y = (int) pocz_rys_y + 20 + y*(bok+odstep);
 					g.fillRect(plansza.pola[x][y].poz_x, plansza.pola[x][y].poz_y, bok, bok);
