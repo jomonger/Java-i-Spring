@@ -18,7 +18,7 @@ public final class Plansza_O_X { // Opis planszy z wewnêtrzn¹ klas¹ pole.
 		}
 	} 
 	
-	public class Pole_O_X {
+	protected class Pole_O_X {
 		char stan = ' '; 
 		int poz_x, poz_y;
 		
