@@ -10,7 +10,7 @@ public final class Gra_Weze {// Obs³uga gry Wê¿e i timera.
 	private boolean kolizja = false, _wygrany = false, zmiana_wyniku = false;
 	private short ilosc_graczy = 6, ilosc_przegranych, ziarno_koloru;	
 	private double[] punkt = new double[2];
-	
+	Object x;
 	protected Gra_Weze() {// Konstruktor, nadanie kolorów graczom.
 		generator = new Random();
 		for (short i = 0; i < 6; i++) {
