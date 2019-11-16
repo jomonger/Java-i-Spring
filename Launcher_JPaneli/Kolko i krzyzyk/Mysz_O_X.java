@@ -43,21 +43,21 @@ public class Mysz_O_X implements MouseListener, MouseMotionListener {
 				if( panel.plansza.pola[i][j].poz_x < x &&
 					panel.plansza.pola[i][j].poz_x+panel.bok > x && 
 					e.getButton() == MouseEvent.BUTTON1 && 
-					panel.zwyciestwo == false)
+					panel.plansza.zwyciestwo == false)
 				{
 					if( panel.plansza.pola[i][j].poz_y < y && 
 						panel.plansza.pola[i][j].poz_y+panel.bok > y ) {
 			
-						if(panel.tura % 2  == 0 && panel.plansza.pola[i][j].stan == ' ') {
+						if(panel.plansza.tura % 2  == 0 && panel.plansza.pola[i][j].stan == ' ') {
 							panel.plansza.pola[i][j].stan = 'o';
-							panel.wygr.czy_Wygrana(panel);
-							panel.tura++;
+							panel.wygr.czy_Wygrana(panel.plansza);
+							panel.plansza.tura++;
 							panel.repaint();
 						}
-						else if(panel.tura % 2 == 1 && panel.plansza.pola[i][j].stan == ' ') {
+						else if(panel.plansza.tura % 2 == 1 && panel.plansza.pola[i][j].stan == ' ') {
 							panel.plansza.pola[i][j].stan = 'x';
-							panel.wygr.czy_Wygrana(panel);
-							panel.tura++;
+							panel.wygr.czy_Wygrana(panel.plansza);
+							panel.plansza.tura++;
 							panel.repaint();			
 						}
 					}

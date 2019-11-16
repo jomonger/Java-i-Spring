@@ -29,7 +29,7 @@ public class GUI_O_X implements ActionListener{// Komponenty interfejsu gry "Kó³
 		pole_edycji = new TextField("3");
 		pole_edycji.setBounds(400 - 95 - 25, 15 , 20, 20);
 		
-		pole_edycji2 = new TextField("3");
+		pole_edycji2 = new TextField("3"); 
 		pole_edycji2.setBounds(400 - 95 - 25, 40 , 20, 20);
 		
 		label1 = new Label("Bok planszy w polach.");
@@ -49,18 +49,18 @@ public class GUI_O_X implements ActionListener{// Komponenty interfejsu gry "Kó³
 		Object source = e.getSource();
 		
 		if (source == res_but) {
-			panel.tura = 0;
+			panel.plansza.tura = 0;
 			panel.ustaw_Stale();
 			panel.rozmiar_planszy = -1;
-			panel.tura = 0;
+			panel.plansza.tura = 0;
 			sta_but.setEnabled(true);
 			panel.repaint(); 		
 		}
 		if (source == sta_but) {
 			try {
 				panel.pole = Integer.parseInt(pole_edycji.getText());
-				panel.warunek = Integer.parseInt(pole_edycji2.getText());
-				if(panel.warunek > panel.pole) panel.warunek = panel.pole;
+				panel.plansza.warunek = Integer.parseInt(pole_edycji2.getText());
+				if(panel.plansza.warunek > panel.pole) panel.plansza.warunek = panel.pole;
 			}
 			catch (Exception ex) {
 			}
@@ -68,10 +68,10 @@ public class GUI_O_X implements ActionListener{// Komponenty interfejsu gry "Kó³
 				panel.rozmiar_planszy = panel.pole;
 				panel.setBackground(Color.BLACK);
 				panel.ustaw_Stale();
-				panel.tura = 0;
+				panel.plansza.tura = 0;
 				sta_but.setEnabled(false);
 				res_but.setEnabled(true);
-				panel.zwyciestwo = false;
+				panel.plansza.zwyciestwo = false;
 				panel.repaint();
 			}	
 		}

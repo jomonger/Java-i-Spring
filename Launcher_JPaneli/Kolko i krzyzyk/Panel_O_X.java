@@ -13,9 +13,9 @@ public class Panel_O_X extends Panel {
 	protected Plansza_O_X plansza;
 	private Dimension	rozdzielczosc;
 	protected int bok, odstep;
-	protected int  pole, rozmiar_planszy = -1, warunek = 3;
-	protected int tura = 0;
-	protected boolean zwyciestwo = false;
+	protected int  pole, rozmiar_planszy = -1;
+	
+	
 	
 	public Panel_O_X() {// Panel zawieraj¹cy grê "Kó³ko i Krzy¿yk".
 		setBackground(Color.GRAY);
@@ -67,10 +67,10 @@ public class Panel_O_X extends Panel {
 				}
 			}
 		}
-		if(zwyciestwo == true) {// Reakcja na zwyciêstwo
+		if(plansza.zwyciestwo == true) {// Reakcja na zwyciêstwo
 			g.setColor(Color.RED);
 	        g.setFont(MAIN.F_ARIAL_20);
-	        g.drawString(("ZWYCIESTWO GRACZA " + ((tura - 1) % 2 + 1)), 10, 100);
+	        g.drawString(("ZWYCIESTWO GRACZA " + ((plansza.tura - 1) % 2 + 1)), 10, 100);
 	        gui.sta_but.setEnabled(true);
     		gui.res_but.setEnabled(false);
 		}	

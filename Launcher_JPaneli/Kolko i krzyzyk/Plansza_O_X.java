@@ -4,6 +4,8 @@ public class Plansza_O_X { // Opis planszy z wewnêtrzn¹ klas¹ pole.
 	protected int ilosc_pol;
 	protected Pole_O_X[][] pola;
 	private int x, y;
+	protected boolean zwyciestwo = false;
+	protected int tura = 0,  warunek = 3;
 	
 	public Plansza_O_X(int roz) {
 		rozmiar_planszy = roz;
