@@ -48,7 +48,6 @@ public final class Buttony_Saper extends JButton {// Klasa zawieraj¹ca dzia³ania
                         	flaga = 1;
                         } else if (flaga == 1) {
                         	setText("?");
-                        	
                         	if(czy_mina) {
                         		panel.licznik_zwyciestwa--;
                         	}
@@ -56,9 +55,10 @@ public final class Buttony_Saper extends JButton {// Klasa zawieraj¹ca dzia³ania
                         } else if (flaga == 2) {   	
                         	panel.licznik_flag--;
                         	setText("");
+                        	flaga = 0;
                         	if(panel.licznik_zwyciestwa == panel.miny && panel.licznik_zwyciestwa == panel.licznik_flag) 
                         		JOptionPane.showMessageDialog(null, "wygrana!");
-                        	flaga = 0;
+                        	
                         }
                 	}
                 }

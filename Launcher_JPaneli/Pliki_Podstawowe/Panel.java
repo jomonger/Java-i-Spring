@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.Window;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -11,6 +12,12 @@ public abstract class Panel extends JPanel {//Klasa abstrakcyjna uogólniaj¹ca pa
 	protected void zamknijOkno() {
 		Window win = SwingUtilities.getWindowAncestor((JComponent) this);
 		win.dispose();
+		
+		
+	}
+	public Dimension getPrefferedSize() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 	

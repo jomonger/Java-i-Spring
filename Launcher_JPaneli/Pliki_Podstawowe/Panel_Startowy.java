@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 
 public final class Panel_Startowy extends Panel {
@@ -37,6 +36,7 @@ public final class Panel_Startowy extends Panel {
 			new Okno((Panel)StworzObiektZeStringa.New(klasa));// Tworzenie nowego obiektu po nazwie klasy.
 		} 
 	}
+	
 	@Override // Z klasy Panel.
 	protected int getClose() {return JFrame.EXIT_ON_CLOSE;}// Zamyka ca³y wszystkie okna.
 	@Override
@@ -49,5 +49,10 @@ public final class Panel_Startowy extends Panel {
 		g.drawString("Launcher R K", 10, 20);
 		g.drawString("Wszystkie okna mo¿na uruchamiaæ wielokrotnie.", 10, 60);
 		g.drawString("Zamkniêcie okna 'Launcher' zamyka wszystkie okna.", 10, 80);
+	}
+	@Override
+	protected void zamknijOkno() {
+		// TODO Auto-generated method stub
+		
 	}
 }

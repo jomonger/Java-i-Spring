@@ -14,7 +14,7 @@ public final class Panel_O_X extends Panel {
 	private Dimension	rozdzielczosc;
 	protected int bok, odstep, pole, rozmiar_planszy = -1;  
 	
-	public Panel_O_X() {// Panel zawieraj¹cy grê "Kó³ko i Krzy¿yk".
+	protected Panel_O_X() {// Panel zawieraj¹cy grê "Kó³ko i Krzy¿yk".
 		setBackground(Color.GRAY);
 		ustaw_Stale();
 	    addMouseListener(new Mysz_O_X(this));// Dodanie wykrywania kilkniêæ Mysz¹ nad polami gry.
@@ -28,13 +28,13 @@ public final class Panel_O_X extends Panel {
 		setLayout(null);
 	}
 	
-	public void ustaw_Stale() {// Parametry rozmiarów.
+	protected void ustaw_Stale() {// Parametry rozmiarów.
 		plansza = new Plansza_O_X(rozmiar_planszy);	
 		odstep = (int) 50/(rozmiar_planszy);
 		bok = (int) 625/rozmiar_planszy - odstep;
 	}
 	
-	public void rysuj_Pole_Gry(Graphics g) {// Rysowanie pola gry.
+	protected void rysuj_Pole_Gry(Graphics g) {// Rysowanie pola gry.
 		if(rozmiar_planszy > 2) {
 			g.setColor(Color.WHITE);
 			for (int x = 0; x < rozmiar_planszy; x++) {
@@ -48,7 +48,7 @@ public final class Panel_O_X extends Panel {
 		}
 	}
 	
-	public void rys_X_O(Graphics g) {// Rysowanie kó³ i krzy¿y.
+	protected void rys_X_O(Graphics g) {// Rysowanie kó³ i krzy¿y.
 		if(rozmiar_planszy > 2) {
 			g.setColor(Color.BLACK); 
 			for (int x = 0; x < rozmiar_planszy; x++) {
@@ -72,7 +72,7 @@ public final class Panel_O_X extends Panel {
 		}	
 	}
 	
-    public void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {
     	g.clearRect(0, 0, rozdzielczosc.width, rozdzielczosc.height);
     	g.setColor(Color.LIGHT_GRAY);
     	g.fillRect(0, 0, rozdzielczosc.width, rozdzielczosc.height);  

@@ -9,7 +9,7 @@ public final class Okno extends JFrame{//Klasa tworzy nowe okno z przekazanym pa
 		setResizable(true);
 		getContentPane();
 		Container cp = getContentPane();
-		cp.add(panel);
+		cp.add(panel); 
 		pack();
 		setDefaultCloseOperation(panel.getClose());//2 - JFrame.DISPOSE_ON_CLOSE, 3 - JFrame.EXIT_ON_CLOSE
 		setVisible(true);

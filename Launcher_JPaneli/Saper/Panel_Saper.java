@@ -55,7 +55,8 @@ public final class Panel_Saper extends Panel {// Panel gry Saper.
 	}
 	
 	protected void stworz_Miny(int x, int y) {// Metoda tworz¹ca miny + liczby przyleg³ych min, 
-		int minax, minay;			      //  wywo³ana dopiero przy pierwszym odkryciu (naciœniêciu) pola.
+		int minax, minay;//  wywo³ana dopiero przy pierwszym odkryciu (naciœniêciu) pola.
+	
 		for(int i = 0 ; i < miny ; i++) {
 			pola[x][y].czy_mina = true;// Tymczasowe ustawienie miny, aby mina nie wylosowa³a siê w miejscu pierwszego odkrycia.
 			while(pola[x][y].czy_mina) {// Pêtla losuj¹ca po³o¿enie miny, a¿ natrafi na pust¹ pozycjê oraz dodaj¹ca liczbe przyleg³ych min.
@@ -84,11 +85,11 @@ public final class Panel_Saper extends Panel {// Panel gry Saper.
 				} 
 			}		
 		}
-		
 	}
 
 	protected void odkryj(Buttony_Saper pole) {// Metoda rekurencyjnie odkrywaj¹ca naciœniête pole i przyleg³e pola, które nie s¹siaduj¹ z min¹.
 		pole.sprawdzone = true;
+		
 		if(pole.czy_odkryty == false) {
 			if(pole.czy_mina) {// Jeœli gracz odrkyje mine, przegrana.
 				 for(int i = 0; i < szerokosc; i++) {
@@ -127,7 +128,5 @@ public final class Panel_Saper extends Panel {// Panel gry Saper.
 				} 
 			}	
 		}
-	}
-	
-	
+	}	
 }
